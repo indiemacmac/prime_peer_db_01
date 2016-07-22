@@ -4,15 +4,20 @@ angular.module('assignApp').controller('MainController', function($http){
   var vm = this;
 
   vm.message = 'this is working';
+  vm.assignment = {};
 
-  vm.doAction = function(){
-    console.log('Clicked');
 
-    // var sendData = {};
-    //
-    // sendData. = vm.
-    // sendData.
-    // sendData.
+  vm.addAssignment = function(){
+    console.log(vm.assignment);
+    $http.post('/assignments/addAssignment', vm.assignment).then(function(response){
+      console.log(response);
+    }, function(response){
+      console.log('fail');
+    }
+  )
+
+
+
 
 
 

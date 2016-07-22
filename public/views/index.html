@@ -4,13 +4,25 @@
     <meta charset="utf-8">
     <script src="./vendors/angular/angular.js" charset="utf-8"></script>
     <script src="./scripts/main-controller.js" charset="utf-8"></script>
+    <link href="./css/style.css" rel="stylesheet" />
       <title>Assignments</title>
   </head>
   <body ng-controller="MainController as main">
-    {{main.message}}
+    <h1>Assignment Tracker</h1>
+
+    <span>Name:<input type="text" ng-model="main.assignment.student_name" /></span><br/>
+
+  </br/>
+    <span>Assignment:<input type="text" ng-model="main.assignment.assignment_name" /></span>
+    <span>Score:<input type="Number" ng-model="main.assignment.score" /></span>
+    <span>Date Completed:<input type="Date" ng-model="main.assignment.date_completed" /></span>
+    <span>Details:<input type="text" ng-model="main.assignment.details" /></span>
+    <button ng-click="main.addAssignment()">Add!</button>
+    {{main.assignment.student_name}}
+
     <ul>
       <li ng-repeat="assignment in main.assignments">
-        {{assignment}}
+        {{assignment.student_name}} {{assignment.assignment_name}} {{assignment.assignment_number}}
       </li>
     </ul>
   </body>
