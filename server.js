@@ -1,7 +1,9 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var assignments = require('./routes/assignments')
+var index = require('./routes/index')
 var bodyParser = require('body-parser');
+
 
 var app = express();
 
