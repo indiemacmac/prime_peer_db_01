@@ -9,20 +9,24 @@
   </head>
   <body ng-controller="MainController as main">
     <h1>Assignment Tracker</h1>
-
-    <span>Name:<input type="text" ng-model="main.assignment.student_name" /></span><br/>
-
-  </br/>
-    <span>Assignment:<input type="text" ng-model="main.assignment.assignment_name" /></span>
-    <span>Score:<input type="Number" ng-model="main.assignment.score" /></span>
-    <span>Date Completed:<input type="Date" ng-model="main.assignment.date_completed" /></span>
-    <span>Details:<input type="text" ng-model="main.assignment.details" /></span>
-    <button ng-click="main.addAssignment()">Add!</button>
-    {{main.assignment.student_name}}
-
+    <button ng-hide="main.input" ng-click="main.input = true">New Assignment</button>
+    <div class="input" ng-show="main.input">
+      <span>Name:<input type="text" ng-model="main.assignment.student_name" /></span>
+      <span>Assignment:<input type="text" ng-model="main.assignment.assignment_name" /></span>
+      <span>Score:<input type="Number" ng-model="main.assignment.score" /></span>
+      <span>Date Completed:<input type="Date" ng-model="main.assignment.date_completed" /></span>
+      <span>Details:<input type="text" ng-model="main.assignment.details" /></span>
+      <span><button ng-click="main.addAssignment()">Add!</button></span>
+    </div>
     <ul>
-      <li ng-repeat="assignment in main.assignments">
-        {{assignment.student_name}} {{assignment.assignment_name}} {{assignment.assignment_number}}
+      <li class="assignment" ng-repeat="assignment in main.assignments">
+        <ul>
+          <li>Student's Name: {{assignment.student_name}}</li>
+          <li>Assignment Name: {{assignment.assignment_name}}</li>
+          <li>Assignment Score: {{assignment.score}}</li>
+          <li>Completion Date: {{assignment.date_completed}}</li>
+          <li>Assignment Details: {{assignment.details}}</li>
+        </ul>
       </li>
     </ul>
   </body>

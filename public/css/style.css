@@ -1,3 +1,11 @@
-span {
+span{
+  display: block;
   width: 100%;
+  margin: 5px;
+}
+.input{
+  margin: 2%;
+}
+.assignment{
+  margin: 10px;
 }
